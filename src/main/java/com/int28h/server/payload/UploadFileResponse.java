@@ -6,4 +6,12 @@ public class UploadFileResponse {
     public UploadFileResponse(String fileUri) {
         this.fileUri = fileUri;
     }
+	
+	public String getFileUri() {
+        return fileUri;
+    }
+
+    public void setFileUri(String fileUri) {
+        this.fileUri = fileUri;
+    }
 }
