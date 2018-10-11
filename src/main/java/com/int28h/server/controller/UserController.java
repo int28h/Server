@@ -20,12 +20,12 @@ public class UserController {
 	UserRepository userRepository;
 	
 	@PostMapping("/users")
-	public User addUser(@Valid @RequestBody User user) {
-		return userRepository.save(user);
+	public Integer addUser(@Valid @RequestBody User user) {
+		return userRepository.save(user).getId();
 	}
 	
 	@GetMapping("/users/{id}")
-    public User getNoteById(@PathVariable(value = "id") Long id) {
+    public User getNoteById(@PathVariable(value = "id") int id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User", "id", id));
     }

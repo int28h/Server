@@ -20,9 +20,19 @@ public class User {
 	private String email;
 	
 	private String userpic;
-	private String status;	
+	private boolean status;	
 	
-	public User(int id, String username, String email, String userpic, String status) {
+	public User() {
+	}
+
+	public User(int id, String username, String email) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.email = email;
+	}	
+	
+	public User(int id, String username, String email, String userpic, boolean status) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -30,6 +40,7 @@ public class User {
 		this.userpic = userpic;
 		this.status = status;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -54,10 +65,10 @@ public class User {
 	public void setUserpic(String userpic) {
 		this.userpic = userpic;
 	}
-	public String getStatus() {
+	public boolean getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+	public void setStatus(boolean status) {
 		this.status = status;
 	}	
 }
